@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 export const Footer = styled.div`
   position: relative;
   padding: 2rem;
+  width: 100%;
   box-shadow: inset 0px -85px 24px -7px rgba(0, 0, 0, 0.5);
   z-index: 1;
   pointer-events: none;

@@ -19,11 +19,7 @@ const Home = () => {
     fetchData();
   }, []);
 
-  return (
-    <>
-      <Grid items={posts} />
-    </>
-  );
+  return <>{posts ? <Grid items={posts} /> : 'loader'}</>;
 };
 
 export default Home;

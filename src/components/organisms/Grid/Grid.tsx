@@ -1,16 +1,19 @@
-import { PostsState } from 'types';
+import { IPost } from 'types';
 import Tile from 'components/molecules/Tile/Tile';
-import { Wrapper } from './Grid.style';
+import { Wrapper, Iframe } from './Grid.style';
 
-const Grid: React.FC<{ items: PostsState }> = ({ items }) => {
-  if (!items) return <>nie udao się pobrać danych</>;
-
+const Grid: React.FC<{ items: Array<IPost> }> = ({ items }) => {
   return (
     <Wrapper>
-      {items.map((item) => {
+      {items.map((item, index) => {
         const { objectId } = item;
-        return <Tile post={item} key={objectId} />;
+        return (
+          <div key={objectId} className={`grid-item-${index}`}>
+            <Tile post={item} />
+          </div>
+        );
       })}
+      <Iframe />
     </Wrapper>
   );
 };
