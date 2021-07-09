@@ -1,10 +1,11 @@
 import GlobalStyles from './styles/GlobalStyles';
+import Home from 'components/pages/Home';
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <div>test</div>
+      <Home />
     </>
   );
 }

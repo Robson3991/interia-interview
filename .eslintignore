@@ -6,3 +6,5 @@
 **/.next/*
 
 .eslintrc.js
+
+tsconfig.json
