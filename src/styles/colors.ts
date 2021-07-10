@@ -10,6 +10,7 @@ const colors = css`
     --color-primary-rgb: 09, 108, 233;
     --color-primary-dark: #0a4fa5;
     --color-primary-dark-rgb: 10, 79, 165;
+    --color-gray: #7a7a7a;
   }
 `;
 
