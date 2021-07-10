@@ -2,10 +2,16 @@ import { IPost } from 'types';
 import Tile from 'components/molecules/Tile/Tile';
 import { Wrapper } from './Grid.style';
 import Iframe from 'components/atoms/Iframe';
+import { IGridStyles } from 'types';
 
-const Grid: React.FC<{ items: Array<IPost> }> = ({ items }) => {
+interface GridProps {
+  items: Array<IPost>;
+  templates: IGridStyles;
+}
+
+const Grid: React.FC<GridProps> = ({ items, templates }) => {
   return (
-    <Wrapper>
+    <Wrapper templates={templates}>
       {items.map((item, index) => {
         const { objectId } = item;
         return (

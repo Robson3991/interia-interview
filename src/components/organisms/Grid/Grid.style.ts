@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import { up } from 'styled-breakpoints';
+import { IGridStyles } from 'types';
 
 const createCSS = () => {
   let styles = '';
@@ -16,15 +18,29 @@ const createCSS = () => {
   `;
 };
 
-export const Wrapper = styled.div`
+const createAreasCSS = (template: string[]) => {
+  let str = '';
+  template.map((item) => (str += `'${item}'`));
+
+  return `grid-template-areas: ${str}`;
+};
+
+export const Wrapper = styled.div<{ templates: IGridStyles }>`
   display: grid;
   grid-template-rows: auto;
   grid-gap: 2rem;
-  grid-template-areas:
-    'item0 item0 item0 item0 item0 item0'
-    'item1 item1 item2 item2 a a'
-    'item3 item3 item4 item4 a a'
-    'item5 item5 item5 item6 item6 item6'
-    'b b item7 item7 item8 item8';
   ${createCSS()};
+  ${({ templates }) => createAreasCSS(templates.small)};
+
+  ${up('md')} {
+    ${({ templates }) => createAreasCSS(templates.medium)};
+  }
+
+  ${up('lg')} {
+    ${({ templates }) => createAreasCSS(templates.large)};
+  }
+
+  ${up('xl')} {
+    ${({ templates }) => createAreasCSS(templates.extraLarge)};
+  }
 `;
