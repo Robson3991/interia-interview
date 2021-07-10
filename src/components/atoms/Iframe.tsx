@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { up } from 'styled-breakpoints';
 
 interface IframeProps {
   large?: boolean;
@@ -11,9 +12,13 @@ const IframeStyle = css`
 `;
 
 const Container = styled.div<IframeProps>`
-  height: ${({ large }) => (large ? '620px' : '300px')};
+  height: 300px;
   grid-area: ${({ large }) => (large ? 'a' : 'b')};
   ${IframeStyle};
+
+  ${up('lg')} {
+    height: ${({ large }) => (large ? '620px' : '300px')};
+  }
 `;
 
 const Wrapper = styled.div`

@@ -21,7 +21,7 @@ const Home = () => {
     fetchData();
   }, []);
 
-  return <>{posts ? <Grid items={posts} template={grid} /> : <Loader />}</>;
+  return <>{posts ? <Grid items={posts} templates={grid} /> : <Loader />}</>;
 };
 
 export default Home;

@@ -11,3 +11,10 @@ export interface IPost {
 }
 
 export type PostsState = false | Array<IPost>;
+
+export interface IGridStyles {
+  small: string[];
+  medium: string[];
+  large: string[];
+  extraLarge: string[];
+}
