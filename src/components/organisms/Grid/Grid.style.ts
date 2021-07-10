@@ -29,18 +29,24 @@ export const Wrapper = styled.div<{ templates: IGridStyles }>`
   display: grid;
   grid-template-rows: auto;
   grid-gap: 2rem;
+  margin-bottom: 2rem;
+  grid-template-columns: repeat(1, 1fr);
   ${createCSS()};
+
   ${({ templates }) => createAreasCSS(templates.small)};
 
   ${up('md')} {
+    grid-template-columns: repeat(2, 1fr);
     ${({ templates }) => createAreasCSS(templates.medium)};
   }
 
   ${up('lg')} {
+    grid-template-columns: repeat(6, 1fr);
     ${({ templates }) => createAreasCSS(templates.large)};
   }
 
   ${up('xl')} {
+    grid-template-columns: repeat(4, 1fr);
     ${({ templates }) => createAreasCSS(templates.extraLarge)};
   }
 `;

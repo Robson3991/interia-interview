@@ -20,8 +20,13 @@ const Grid: React.FC<GridProps> = ({ items, templates }) => {
           </div>
         );
       })}
-      <Iframe large>Reklama pierwsza</Iframe>
-      <Iframe>Reklama druga</Iframe>
+
+      {items.length > 6 && (
+        <>
+          <Iframe large>Reklama pierwsza</Iframe>
+          <Iframe>Reklama druga</Iframe>
+        </>
+      )}
     </Wrapper>
   );
 };

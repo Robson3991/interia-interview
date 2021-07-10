@@ -9,8 +9,6 @@ interface TileProps {
 const Tile: React.FC<TileProps> = ({ post }) => {
   const { category, title, img, link } = post;
 
-  console.log(post);
-
   return (
     <a href={link}>
       <Wrapper>

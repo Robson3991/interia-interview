@@ -10,7 +10,7 @@ export interface IPost {
   summary: string;
 }
 
-export type PostsState = false | Array<IPost>;
+export type PostsState = [] | Array<IPost>;
 
 export interface IGridStyles {
   small: string[];
