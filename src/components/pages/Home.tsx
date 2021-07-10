@@ -3,6 +3,7 @@ import axios from 'axios';
 import Grid from 'components/organisms/Grid/Grid';
 import { PostsState } from 'types';
 import Loader from 'components/atoms/Loader';
+import grid from 'constants/grid';
 
 const Home = () => {
   const [posts, setPosts] = useState<PostsState>(false);
@@ -20,7 +21,7 @@ const Home = () => {
     fetchData();
   }, []);
 
-  return <>{posts ? <Grid items={posts} /> : <Loader />}</>;
+  return <>{posts ? <Grid items={posts} template={grid} /> : <Loader />}</>;
 };
 
 export default Home;

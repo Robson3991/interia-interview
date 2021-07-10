@@ -16,15 +16,18 @@ const createCSS = () => {
   `;
 };
 
-export const Wrapper = styled.div`
+const createAreasCSS = (template: string[]) => {
+  let str = '';
+  template.map((item) => (str += `'${item}'`));
+
+  return `grid-template-areas: ${str}`;
+};
+
+export const Wrapper = styled.div<{ template: string[] }>`
   display: grid;
   grid-template-rows: auto;
   grid-gap: 2rem;
-  grid-template-areas:
-    'item0 item0 item0 item0 item0 item0'
-    'item1 item1 item2 item2 a a'
-    'item3 item3 item4 item4 a a'
-    'item5 item5 item5 item6 item6 item6'
-    'b b item7 item7 item8 item8';
+
+  ${({ template }) => createAreasCSS(template)};
   ${createCSS()};
 `;
