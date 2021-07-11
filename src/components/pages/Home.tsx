@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/list');
+        const response = await axios.get('http://localhost:3004/list');
         setPosts(response.data);
         console.log(posts);
       } catch (error) {
