@@ -7,19 +7,21 @@ import grid from 'constants/grid';
 
 const Home = () => {
   const [posts, setPosts] = useState<PostsState>(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/list');
+        const response = await axios.get('http://localhost:3004/list');
         setPosts(response.data);
-        console.log(posts);
       } catch (error) {
-        console.log(error.response);
+        setError(true);
       }
     };
     fetchData();
   }, []);
+
+  if (error) return <p>Nie udało się pobrać danych</p>;
 
   return <>{posts ? <Grid items={posts} templates={grid} /> : <Loader />}</>;
 };

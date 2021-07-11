@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "react-grid",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,11 +25,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "server": "json-server --watch db/db.json --port 3004"
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
