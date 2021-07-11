@@ -9,12 +9,10 @@ interface TileProps {
 const Tile: React.FC<TileProps> = ({ post }) => {
   const { category, title, img, link } = post;
 
-  console.log(post);
-
   return (
     <a href={link}>
       <Wrapper>
-        <Background background={img} />
+        <Background src={img} title={title} alt={`grafika - ${title}`} />
         <Footer>
           <Taxonomy>{category}</Taxonomy>
           <Title>{title}</Title>

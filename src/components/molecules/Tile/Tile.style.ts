@@ -23,22 +23,17 @@ export const Title = styled.h3`
   max-width: 95%;
 `;
 
-interface BackgroundProps {
-  background?: string;
-}
-
-export const Background = styled.div<BackgroundProps>`
+export const Background = styled.img`
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: ${({ background }) =>
-    background ? `url(${background}) no-repeat` : 'blue'};
-  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: transform var(--transition);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
   &:hover {
-    transform: scale(1.05);
+    transform: translate(-50%, -50%) scale(1.05);
   }
 `;
